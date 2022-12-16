@@ -3,3 +3,11 @@ const { platform, username } = Astro.props;
 ---
 
 <a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>
+
+<style>
+    a {
+        text-transform: capitalize;
+        text-decoration: none;
+        color: rgb(37, 34, 68);
+    }
+</style>

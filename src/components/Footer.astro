@@ -1,0 +1,29 @@
+---
+const platforms = ["github", "twitter", "youtube"];
+const username = "rajahwu";
+---
+<footer>
+  <ul>
+    <li>
+      <p>
+        Learn more about my projects on <a
+          href={`https://www.${platforms[0]}.com/${username}`}>{platforms[1]}</a
+        >!
+      </p>
+    </li>
+    <li>
+      <p>
+        Follow me on <a href={`https://www.${platforms[1]}.com/${username}`}
+          >{platforms[1]}</a
+        >!
+      </p>
+    </li>
+    <li>
+      <p>
+        Watch me on <a href={`https://www.${platforms[2]}.com/@${username}`}
+          >{platforms[2]}</a
+        >!
+      </p>
+    </li>
+  </ul>
+</footer>

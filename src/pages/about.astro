@@ -1,15 +1,16 @@
 ---
-import '../styles/reset.css';
-import '../styles/global.css';
+import "../styles/reset.css";
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
 
 const pageTitle = "About Me";
 const identity = {
-    firstName: "Vincent",
-    lastName: "Radford",
-    occupation: "Web Developer",
-    hobbies: ["martial arts", "writing", "chillen"]
-}
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
+  firstName: "Vincent",
+  lastName: "Radford",
+  occupation: "Web Developer",
+  hobbies: ["martial arts", "writing", "chillen"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
 const finished = false;
@@ -17,60 +18,62 @@ const goal = 3;
 
 const skillColor = "navy";
 const fontWeight = "900";
-const textCase = "uppercase "
+const textCase = "uppercase ";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
 
-            .skill {
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
-	</head>
-	<body>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/blog/">Blog</a></li>
-            </ul>
-        </nav>
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
+  </head>
+  <body>
+    <Navigation />
 
-		<h1>{pageTitle} </h1>
-        <h2>... and my new Astro site!</h2>
+    <h1>{pageTitle}</h1>
+    <h2>... and my new Astro site!</h2>
 
-        <p>I am building this site with Astro.</p>
+    <p>I am building this site with Astro.</p>
 
-        <p>This site will update as I walkthrough the tutorial.</p>
+    <p>This site will update as I walkthrough the tutorial.</p>
 
-        <p>Here are some facts about me:</p>
-        <ul>
-            <li>My name is {identity.firstName}</li>
-            <li>I live in {} and am studying {identity.occupation} at {}</li>
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map(skill => <li class="skill">{skill}</li>)}
-        </ul>
+    <p>Here are some facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}</li>
+      <li>I live in {} and am studying {identity.occupation} at {}</li>
+      <li>
+        Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+      </li>
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
 
-        {happy && <p>I am happy to be learning Astro</p>}
+    {happy && <p>I am happy to be learning Astro</p>}
 
-        {finished && <p>I finished this tutorial!</p>}
+    {finished && <p>I finished this tutorial!</p>}
 
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-	</body>
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+  </body>
 </html>

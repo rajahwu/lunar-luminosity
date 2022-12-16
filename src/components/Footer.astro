@@ -1,29 +1,12 @@
 ---
-const platforms = ["github", "twitter", "youtube"];
-const username = "rajahwu";
+import Social from "./Social.astro";
 ---
+
 <footer>
+  <p>Learn more about my projects on:</p>
   <ul>
-    <li>
-      <p>
-        Learn more about my projects on <a
-          href={`https://www.${platforms[0]}.com/${username}`}>{platforms[1]}</a
-        >!
-      </p>
-    </li>
-    <li>
-      <p>
-        Follow me on <a href={`https://www.${platforms[1]}.com/${username}`}
-          >{platforms[1]}</a
-        >!
-      </p>
-    </li>
-    <li>
-      <p>
-        Watch me on <a href={`https://www.${platforms[2]}.com/@${username}`}
-          >{platforms[2]}</a
-        >!
-      </p>
-    </li>
+    <li><Social platform="twitter" username="rajahwu" /></li>
+    <li><Social platform="youtube" username="@rajahwu"/></li>
+    <li><Social platform="github" username="rajahwu"/></li>
   </ul>
 </footer>
